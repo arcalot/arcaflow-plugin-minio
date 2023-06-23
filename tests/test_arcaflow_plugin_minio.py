@@ -7,13 +7,9 @@ from arcaflow_plugin_sdk import plugin
 class HelloWorldTest(unittest.TestCase):
     @staticmethod
     def test_serialization():
-        plugin.test_object_serialization(
-            minio_plugin.InputParams("John Doe")
-        )
+        plugin.test_object_serialization(minio_plugin.InputParams("John Doe"))
 
-        plugin.test_object_serialization(
-            minio_plugin.SuccessOutput("Hello, world!")
-        )
+        plugin.test_object_serialization(minio_plugin.SuccessOutput("Hello, world!"))
 
         plugin.test_object_serialization(
             minio_plugin.ErrorOutput(error="This is an error")
@@ -26,10 +22,7 @@ class HelloWorldTest(unittest.TestCase):
 
         # The example plugin always returns an error:
         self.assertEqual("success", output_id)
-        self.assertEqual(
-            output_data,
-            minio_plugin.SuccessOutput("Hello, Example Joe!")
-        )
+        self.assertEqual(output_data, minio_plugin.SuccessOutput("Hello, Example Joe!"))
 
 
 if __name__ == "__main__":
