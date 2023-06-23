@@ -1,6 +1,6 @@
 # Arcaflow MinIO Plugin
 
-The MinIO plugin creates an ephemerial object store that can be used during the operation of a workflow. A single `arca-bucket` storage bucket is created, and the plugin returns in its output object the required credentials for accessing the bucket.
+The MinIO plugin creates an ephemeral object store that can be used during the operation of a workflow. A single `arca-bucket` storage bucket is created, and the plugin returns in its output object the required credentials for accessing the bucket.
 
 ## Accessing the bucket
 
