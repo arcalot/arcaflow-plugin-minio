@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "arcaflow-plugin-template-python"
+version = "0.1.0"
+description = ""
+authors = ["Arcalot"]
+license = "Apache-2.0+GPL-2.0-only"
+
+packages = [
+   { include="arcaflow_plugin_template_python.py", from="./arcaflow_plugin_template_python"  },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+arcaflow-plugin-sdk = "^0.10.3"
+
+[tool.poetry.dev-dependencies]
+docformatter = "^1.5.0"
+autoflake = "^1.7.6"
+pydocstyle = "^6.1.1"
+black = "^22.10.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

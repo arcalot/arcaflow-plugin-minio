@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  plugin:
+    image: quay.io/arcalot/arcaflow-plugin-template-python
+    build: .
+    volumes:
+      - source: ./example.yaml
+        target: /config/example.yaml
+        type: bind

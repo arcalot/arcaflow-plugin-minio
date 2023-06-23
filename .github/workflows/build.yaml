@@ -1,0 +1,32 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Build image
+        run: docker-compose build
+      - name: Run plugin
+        run: docker-compose up
+      - name: Extract coverage data
+        run: |
+          docker create --name test quay.io/arcalot/arcaflow-plugin-template-python:latest
+          docker cp test:/htmlcov .
+          docker rm test
+      - name: Publish coverage report to job summary
+        run: |
+          pip install html2text
+          html2text --ignore-images --ignore-links -b 0 htmlcov/index.html >> $GITHUB_STEP_SUMMARY
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: htmlcov
+          if-no-files-found: error
