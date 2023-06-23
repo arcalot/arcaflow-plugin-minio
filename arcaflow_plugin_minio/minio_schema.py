@@ -7,27 +7,15 @@ from arcaflow_plugin_sdk import validation
 
 @dataclass
 class InputParams:
-    """
-    This is the data structure for the input parameters of the step defined
-    below.
-    """
-
-    name: typing.Annotated[str, validation.min(1)]
+    run_duration: int
 
 
 @dataclass
 class SuccessOutput:
-    """
-    This is the output data structure for the success case.
-    """
-
-    message: str
+    access_key: str
+    secret_key: str
 
 
 @dataclass
 class ErrorOutput:
-    """
-    This is the output data structure in the error  case.
-    """
-
     error: str
