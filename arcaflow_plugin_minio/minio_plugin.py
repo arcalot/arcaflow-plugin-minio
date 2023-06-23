@@ -33,8 +33,15 @@ def minio(
 ) -> typing.Tuple[str, typing.Union[SuccessOutput, ErrorOutput]]:
 
     # Set the access and secret keys
-    minio_user = get_random_string(8)
-    minio_password = get_random_string(8)
+    # Note: Until we have the ability in the workflow to pass output from the plugin before it completes, we will need to be able to set deterministic values for user and password in the input.
+    if not params.minio_user:
+        minio_user = get_random_string(8)
+    else:
+        minio_user = params.minio_user
+    if not params.minio_password:
+        minio_password = get_random_string(8)
+    else:
+        minio_password = params.minio_password
 
     os.environ["MINIO_ROOT_USER"] = minio_user
     os.environ["MINIO_ROOT_PASSWORD"] = minio_password

@@ -14,6 +14,20 @@ class InputParams:
             "Time in seconds that the PCP plugin runs before being forceably stopped"
         ),
     ]
+    minio_user: typing.Annotated[
+        typing.Optional[str],
+        schema.name("MinIO username"),
+        schema.description(
+            "The MinIO server username"
+        ),
+    ] = None
+    minio_password: typing.Annotated[
+        typing.Optional[str],
+        schema.name("MinIO password"),
+        schema.description(
+            "The MinIO server password"
+        ),
+    ] = None
 
 
 @dataclass

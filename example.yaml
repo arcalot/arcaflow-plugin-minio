@@ -1,1 +1,3 @@
 run_duration: 10
+minio_user: minioadmin
+minio_password: minioadmin
