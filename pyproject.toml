@@ -6,7 +6,7 @@ authors = ["Arcalot"]
 license = "Apache-2.0+GPL-2.0+AGPL-3.0-only"
 
 packages = [
-   { include="arcaflow_plugin_minio.py", from="./arcaflow_plugin_minio"  },
+   { include="minio_plugin.py", from="."  },
 ]
 
 [tool.poetry.dependencies]

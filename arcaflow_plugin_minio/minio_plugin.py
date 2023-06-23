@@ -2,8 +2,8 @@
 
 import sys
 import typing
-from dataclasses import dataclass
-from arcaflow_plugin_sdk import plugin, validation
+import subprocess
+from arcaflow_plugin_sdk import plugin
 from minio_schema import (
     InputParams,
     SuccessOutput,
@@ -12,32 +12,44 @@ from minio_schema import (
 
 
 @plugin.step(
-    id="hello-world",
-    name="Hello world!",
-    description="Says hello :)",
+    id="minio",
+    name="MinIO",
+    description="Runs the MinIO server and sets up a bucket",
     outputs={"success": SuccessOutput, "error": ErrorOutput},
 )
-def hello_world(
+def minio(
     params: InputParams,
 ) -> typing.Tuple[str, typing.Union[SuccessOutput, ErrorOutput]]:
-    """The function is the implementation for the step. It needs the decorator
-    above to make it into a step. The type hints for the params are required.
+    
+    # Start the MinIO server
+    minio_cmd = [
+        "/usr/local/bin/minio",
+        "server",
+        "start",
+    ]
+    try:
+        subprocess.Popen(
+            minio_cmd,
+            # stderr=subprocess.STDOUT,
+            text=True,
 
-    :param params:
+        )
+        print("==> MinIO server started")
+    except subprocess.CalledProcessError as error:
+        return "error", ErrorOutput(
+            "{} failed with return code {}:\n{}".format(
+                error.cmd[0], error.returncode, error.output
+            )
+        )
 
-    :return: the string identifying which output it is, as well the output
-        structure
-    """
-
-    return "success", SuccessOutput("Hello, {}!".format(params.name))
+    return "success", SuccessOutput("TODO message")
 
 
 if __name__ == "__main__":
     sys.exit(
         plugin.run(
             plugin.build_schema(
-                # List your step functions here:
-                hello_world,
+                minio,
             )
         )
     )

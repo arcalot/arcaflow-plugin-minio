@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-import arcaflow_plugin_minio
+import minio_plugin
 from arcaflow_plugin_sdk import plugin
 
 
@@ -8,27 +8,27 @@ class HelloWorldTest(unittest.TestCase):
     @staticmethod
     def test_serialization():
         plugin.test_object_serialization(
-            arcaflow_plugin_minio.InputParams("John Doe")
+            minio_plugin.InputParams("John Doe")
         )
 
         plugin.test_object_serialization(
-            arcaflow_plugin_minio.SuccessOutput("Hello, world!")
+            minio_plugin.SuccessOutput("Hello, world!")
         )
 
         plugin.test_object_serialization(
-            arcaflow_plugin_minio.ErrorOutput(error="This is an error")
+            minio_plugin.ErrorOutput(error="This is an error")
         )
 
     def test_functional(self):
-        input = arcaflow_plugin_minio.InputParams(name="Example Joe")
+        input = minio_plugin.InputParams(name="Example Joe")
 
-        output_id, output_data = arcaflow_plugin_minio.hello_world(input)
+        output_id, output_data = minio_plugin.hello_world(input)
 
         # The example plugin always returns an error:
         self.assertEqual("success", output_id)
         self.assertEqual(
             output_data,
-            arcaflow_plugin_minio.SuccessOutput("Hello, Example Joe!")
+            minio_plugin.SuccessOutput("Hello, Example Joe!")
         )
 
 

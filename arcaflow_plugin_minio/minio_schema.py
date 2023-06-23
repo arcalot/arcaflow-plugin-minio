@@ -2,7 +2,7 @@
 
 import typing
 from dataclasses import dataclass
-from arcaflow_plugin_sdk import plugin, validation
+from arcaflow_plugin_sdk import validation
 
 
 @dataclass
