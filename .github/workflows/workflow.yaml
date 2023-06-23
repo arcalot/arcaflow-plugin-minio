@@ -25,5 +25,3 @@ jobs:
       pull-requests: write
     with:
       plugin_path: "arcaflow_plugin_minio/minio_plugin.py"
-
-      
