@@ -28,12 +28,12 @@ ENV PYTHONPATH /app/${package}
 
 WORKDIR /app/${package}
 
-# RUN mkdir /htmlcov
-# RUN python3.9 -m pip install coverage
-# # FIX for some reason, the test was reporting it could not find the yaml module
-# RUN python3.9 -m pip install -r requirements.txt
-# RUN python3.9 -m coverage run tests/test_arcaflow_plugin_minio.py
-# RUN python3.9 -m coverage html -d /htmlcov --omit=/usr/local/*
+RUN mkdir /htmlcov
+RUN python3.9 -m pip install coverage
+# FIX for some reason, the test was reporting it could not find the yaml module
+RUN python3.9 -m pip install -r /app/requirements.txt
+RUN python3.9 -m coverage run tests/test_arcaflow_plugin_minio.py
+RUN python3.9 -m coverage html -d /htmlcov --omit=/usr/local/*
 
 
 # final image
@@ -46,7 +46,7 @@ RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/minio-${mi
 WORKDIR /app
 
 COPY --from=poetry /app/requirements.txt /app/
-# COPY --from=poetry /htmlcov /htmlcov/
+COPY --from=poetry /htmlcov /htmlcov/
 COPY LICENSE /app/
 COPY README.md /app/
 COPY ${package}/ /app/${package}
