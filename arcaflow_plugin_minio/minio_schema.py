@@ -17,16 +17,12 @@ class InputParams:
     minio_user: typing.Annotated[
         typing.Optional[str],
         schema.name("MinIO username"),
-        schema.description(
-            "The MinIO server username"
-        ),
+        schema.description("The MinIO server username"),
     ] = None
     minio_password: typing.Annotated[
         typing.Optional[str],
         schema.name("MinIO password"),
-        schema.description(
-            "The MinIO server password"
-        ),
+        schema.description("The MinIO server password"),
     ] = None
 
 
