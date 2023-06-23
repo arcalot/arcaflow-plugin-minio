@@ -17,7 +17,7 @@ jobs:
         run: docker-compose up
       - name: Extract coverage data
         run: |
-          docker create --name test quay.io/arcalot/arcaflow-plugin-template-python:latest
+          docker create --name test quay.io/arcalot/arcaflow-plugin-minio:latest
           docker cp test:/htmlcov .
           docker rm test
       - name: Publish coverage report to job summary

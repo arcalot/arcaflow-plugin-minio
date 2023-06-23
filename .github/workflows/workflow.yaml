@@ -24,4 +24,4 @@ jobs:
       contents: write
       pull-requests: write
     with:
-      plugin_path: "arcaflow_plugin_template_python/arcaflow_plugin_template_python.py"
+      plugin_path: "arcaflow_plugin_minio/minio_pluign.py"
