@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "arcaflow-plugin-template-python"
+name = "arcaflow-plugin-minio"
 version = "0.1.0"
 description = ""
 authors = ["Arcalot"]
-license = "Apache-2.0+GPL-2.0-only"
+license = "Apache-2.0+GPL-2.0+AGPL-3.0-only"
 
 packages = [
-   { include="arcaflow_plugin_template_python.py", from="./arcaflow_plugin_template_python"  },
+   { include="arcaflow_plugin_minio.py", from="./arcaflow_plugin_minio"  },
 ]
 
 [tool.poetry.dependencies]

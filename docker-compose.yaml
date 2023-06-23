@@ -1,7 +1,7 @@
 version: '3.2'
 services:
   plugin:
-    image: quay.io/arcalot/arcaflow-plugin-template-python
+    image: quay.io/arcalot/arcaflow-plugin-minio
     build: .
     volumes:
       - source: ./example.yaml
