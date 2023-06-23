@@ -8,6 +8,8 @@ In order to access the bucket, the MinIO plugin container will need to be launch
 
 The MinIO object store is S3 compatible, so it is possible to use the S3 libraries, the simpler MinIO libraries (recommended), or any other S3 compatible client methods to access the bucket.
 
+The MinIO server is run as **insecure** so connections are via HTTP without certificates.
+
 ## Persistent storage
 
 If you would like for your bucket contents to survive after the workflow execution, you will need to mount a persistent filesystem to the container at `/arca-bucket`. You will then be able to run a MinIO server separately using this storage location and re-establish access to the bucket outside of the plugin.
