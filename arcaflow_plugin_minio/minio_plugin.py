@@ -52,7 +52,7 @@ def minio(
     minio_cmd = [
         "/usr/local/bin/minio",
         "server",
-        "/arca-bucket",
+        "/mnt/arca-bucket",
     ]
     try:
         Popen(
