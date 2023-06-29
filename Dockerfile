@@ -6,7 +6,7 @@ FROM quay.io/centos/centos:stream8 as poetry
 ARG package
 ARG minio_version
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip
-RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/minio-${minio_version}.x86_64.rpm
+RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/archive/minio-${minio_version}.x86_64.rpm
 
 WORKDIR /app
 
