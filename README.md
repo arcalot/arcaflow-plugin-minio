@@ -25,21 +25,25 @@ Runs the MinIO server and sets up a bucket
 
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>InputParams</td></tr>
-<tr><th>Properties</th><td><details><summary>minio_password (<code>string</code>)</summary>
+<tr><th>Properties</th><td><details><summary>bucket_name (<code>string</code>)</summary>
+                <table><tbody><tr><th>Name:</th><td>bucket name</td></tr><tr><th>Description:</th><td>Name for object bucket</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;arca-bucket&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+            </details><details><summary>minio_password (<code>string</code>)</summary>
                 <table><tbody><tr><th>Name:</th><td>MinIO password</td></tr><tr><th>Description:</th><td>The MinIO server password</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>minio_user (<code>string</code>)</summary>
                 <table><tbody><tr><th>Name:</th><td>MinIO username</td></tr><tr><th>Description:</th><td>The MinIO server username</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>run_duration (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td>Time in seconds that the PCP plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td>Time in seconds that the MinIO plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>InputParams (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>minio_password (<code>string</code>)</summary>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>bucket_name (<code>string</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>bucket name</td></tr><tr><th>Description:</th><td>Name for object bucket</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;arca-bucket&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        </details><details><summary>minio_password (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>MinIO password</td></tr><tr><th>Description:</th><td>The MinIO server password</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>minio_user (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>MinIO username</td></tr><tr><th>Description:</th><td>The MinIO server username</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>run_duration (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td>Time in seconds that the PCP plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td>Time in seconds that the MinIO plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
