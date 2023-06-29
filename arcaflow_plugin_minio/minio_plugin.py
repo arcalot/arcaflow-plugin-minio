@@ -53,6 +53,8 @@ def minio(
         "/usr/local/bin/minio",
         "server",
         "/mnt/arca-bucket",
+        "--console-address",
+        ":9001",
     ]
     try:
         Popen(
