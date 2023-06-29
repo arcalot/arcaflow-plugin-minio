@@ -5,7 +5,7 @@ import random
 import os
 import sys
 import typing
-from subprocess import Popen, STDOUT, CalledProcessError
+from subprocess import Popen, PIPE, STDOUT, CalledProcessError
 from time import sleep
 from minio import Minio
 
@@ -59,6 +59,7 @@ def minio(
             minio_cmd,
             text=True,
             stderr=STDOUT,
+            stdout=PIPE,
         )
         print("==> MinIO server started")
     except CalledProcessError as error:
