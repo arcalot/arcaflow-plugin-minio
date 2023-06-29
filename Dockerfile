@@ -1,5 +1,5 @@
 ARG package=arcaflow_plugin_minio
-ARG minio_version=20230619195250.0.0
+ARG minio_version=20230629051228.0.0
 
 # build poetry
 FROM quay.io/centos/centos:stream8 as poetry
