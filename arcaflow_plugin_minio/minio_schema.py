@@ -11,7 +11,7 @@ class InputParams:
         int,
         schema.name("run duration"),
         schema.description(
-            "Time in seconds that the PCP plugin runs before being forceably stopped"
+            "Time in seconds that the MinIO plugin runs before being forceably stopped"
         ),
     ]
     minio_user: typing.Annotated[
@@ -24,6 +24,11 @@ class InputParams:
         schema.name("MinIO password"),
         schema.description("The MinIO server password"),
     ] = None
+    bucket_name: typing.Annotated[
+        typing.Optional[str],
+        schema.name("bucket name"),
+        schema.description("Name for object bucket"),
+    ] = "arca-bucket"
 
 
 @dataclass

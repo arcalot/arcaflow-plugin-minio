@@ -5,7 +5,7 @@ import random
 import os
 import sys
 import typing
-import subprocess
+from subprocess import Popen, STDOUT, CalledProcessError
 from time import sleep
 from minio import Minio
 
@@ -55,19 +55,20 @@ def minio(
         "/arca-bucket",
     ]
     try:
-        subprocess.Popen(
+        Popen(
             minio_cmd,
             text=True,
+            stderr=STDOUT,
         )
         print("==> MinIO server started")
-    except subprocess.CalledProcessError as error:
+    except CalledProcessError as error:
         return "error", ErrorOutput(
             "{} failed with return code {}:\n{}".format(
                 error.cmd[0], error.returncode, error.output
             )
         )
 
-    # Create the bucket
+    # Define the connection
     client = Minio(
         "127.0.0.1:9000",
         access_key=minio_user,
@@ -75,9 +76,10 @@ def minio(
         secure=False,
     )
 
-    client.make_bucket("arca-bucket")
+    # Create the bucket
+    client.make_bucket(params.bucket_name)
 
-    print("==> arca-bucket created")
+    print(f"==> {params.bucket_name} bucket created")
 
     # Note -- Timeout is a temporary workaround until the parallelization
     # functionality of the workflow engine is complete.
