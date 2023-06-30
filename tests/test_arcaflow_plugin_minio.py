@@ -37,8 +37,8 @@ class minioTest(unittest.TestCase):
         output_id, output_data = minio_plugin.minio(input)
 
         self.assertEqual("success", output_id)
-        self.assertIsInstance(output_data.access_key, str)
-        self.assertIsInstance(output_data.secret_key, str)
+        self.assertEqual("foo", output_data.access_key)
+        self.assertEqual("bartholomew", output_data.secret_key)
 
 
 if __name__ == "__main__":
