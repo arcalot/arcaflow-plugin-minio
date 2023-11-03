@@ -16,7 +16,7 @@ def run_minio_server():
         minio_password="bartholomew",
         bucket_name="mybucket",
     )
-    return minio_plugin.minio(input)
+    return minio_plugin.minio(params=input, run_id="plugin_ci")
 
 
 class minioTest(unittest.TestCase):
