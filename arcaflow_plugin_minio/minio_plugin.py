@@ -31,7 +31,6 @@ def get_random_string(length):
 def minio(
     params: InputParams,
 ) -> typing.Tuple[str, typing.Union[SuccessOutput, ErrorOutput]]:
-
     # Set the access and secret keys
     # Note: Until we have the ability in the workflow to pass output from the plugin
     # before it completes, we will need to be able to set deterministic values for
