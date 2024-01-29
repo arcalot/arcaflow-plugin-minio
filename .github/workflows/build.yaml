@@ -25,7 +25,7 @@ jobs:
           pip install html2text
           html2text --ignore-images --ignore-links -b 0 htmlcov/index.html >> $GITHUB_STEP_SUMMARY
       - name: Upload coverage results
-        uses: actions/upload-artifact@694cdabd8bdb0f10b2cea11669e1bf5453eed0a6 # v4
+        uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4
         with:
           name: coverage
           path: htmlcov
