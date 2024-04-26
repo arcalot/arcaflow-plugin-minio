@@ -37,24 +37,24 @@ Runs the MinIO server and sets up a bucket
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>InputParams</td></tr>
 <tr><th>Properties</th><td><details><summary>bucket_name (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>bucket name</td></tr><tr><th>Description:</th><td>Name for object bucket</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;arca-bucket&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>bucket name</td></tr><tr><th>Description:</th><td width="500">Name for object bucket</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;arca-bucket&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>minio_password (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>MinIO password</td></tr><tr><th>Description:</th><td>The MinIO server password</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>MinIO password</td></tr><tr><th>Description:</th><td width="500">The MinIO server password</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>minio_user (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>MinIO username</td></tr><tr><th>Description:</th><td>The MinIO server username</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>MinIO username</td></tr><tr><th>Description:</th><td width="500">The MinIO server username</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>run_duration (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td>Time in seconds that the MinIO plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td width="500">Time in seconds that the MinIO plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>InputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>bucket_name (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>bucket name</td></tr><tr><th>Description:</th><td>Name for object bucket</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;arca-bucket&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>bucket name</td></tr><tr><th>Description:</th><td width="500">Name for object bucket</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;arca-bucket&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>minio_password (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>MinIO password</td></tr><tr><th>Description:</th><td>The MinIO server password</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>MinIO password</td></tr><tr><th>Description:</th><td width="500">The MinIO server password</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>minio_user (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>MinIO username</td></tr><tr><th>Description:</th><td>The MinIO server username</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>MinIO username</td></tr><tr><th>Description:</th><td width="500">The MinIO server username</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>run_duration (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td>Time in seconds that the MinIO plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>run duration</td></tr><tr><th>Description:</th><td width="500">Time in seconds that the MinIO plugin runs before being forceably stopped</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
@@ -84,15 +84,15 @@ Runs the MinIO server and sets up a bucket
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>SuccessOutput</td></tr>
 <tr><th>Properties</th><td><details><summary>access_key (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>access key</td></tr><tr><th>Description:</th><td>The MinIO server access key (user)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>access key</td></tr><tr><th>Description:</th><td width="500">The MinIO server access key (user)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>secret_key (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>secret key</td></tr><tr><th>Description:</th><td>The MinIO server access secret (password)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>secret key</td></tr><tr><th>Description:</th><td width="500">The MinIO server access secret (password)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SuccessOutput (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>access_key (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>access key</td></tr><tr><th>Description:</th><td>The MinIO server access key (user)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>access key</td></tr><tr><th>Description:</th><td width="500">The MinIO server access key (user)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>secret_key (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>secret key</td></tr><tr><th>Description:</th><td>The MinIO server access secret (password)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>secret key</td></tr><tr><th>Description:</th><td width="500">The MinIO server access secret (password)</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details></details></td></tr>
