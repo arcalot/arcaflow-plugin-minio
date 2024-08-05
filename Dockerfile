@@ -3,7 +3,7 @@ ARG package=arcaflow_plugin_minio
 # STAGE 1 -- Build module dependencies and run tests
 # The 'poetry' and 'coverage' modules are installed and verson-controlled in the
 # quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase image to limit drift
-FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase:0.4.0 as build
+FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase:0.4.2 as build
 ARG package
 RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/archive/minio-20230629051228.0.0.x86_64.rpm
 
@@ -26,7 +26,7 @@ RUN python -m coverage run tests/test_${package}.py \
 
 
 # STAGE 2 -- Build final plugin image
-FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-osbase:0.4.0
+FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-osbase:0.4.2
 ARG package
 RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/archive/minio-20230629051228.0.0.x86_64.rpm
 
