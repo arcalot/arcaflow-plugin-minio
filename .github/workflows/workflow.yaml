@@ -16,6 +16,9 @@ jobs:
       QUAY_NAMESPACE: ${{ secrets.QUAY_NAMESPACE }}
       QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
       QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+    env: 
+      # the minio plugin is currently not ready for other cpu architectures
+      BUILD_PLATFORMS: linux/amd64
 
   docsgen:
     needs: act
