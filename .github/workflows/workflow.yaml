@@ -8,7 +8,7 @@ on:
       - published
 jobs:
   act:
-    uses: arcalot/arcaflow-container-toolkit/.github/workflows/reusable_workflow.yaml@wf-build-platform
+    uses: arcalot/arcaflow-container-toolkit/.github/workflows/reusable_workflow.yaml@main
     with:
       image_name: ${{ github.event.repository.name }}
       image_tag: 'latest'
