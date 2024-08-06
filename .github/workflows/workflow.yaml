@@ -8,14 +8,17 @@ on:
       - published
 jobs:
   act:
-    uses: arcalot/arcaflow-container-toolkit/.github/workflows/reusable_workflow.yaml@main
+    uses: arcalot/arcaflow-container-toolkit/.github/workflows/reusable_workflow.yaml@wf-build-platform
     with:
       image_name: ${{ github.event.repository.name }}
       image_tag: 'latest'
+      # the minio plugin is currently not ready for other cpu architectures
+      build_platforms: linux/amd64
     secrets:
       QUAY_NAMESPACE: ${{ secrets.QUAY_NAMESPACE }}
       QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
       QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+      
 
   docsgen:
     needs: act
