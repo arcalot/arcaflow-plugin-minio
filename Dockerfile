@@ -1,11 +1,20 @@
 ARG package=arcaflow_plugin_minio
+ARG MINIO_VERSION=minio-20230629051228.0.0
+ARG TARGETPLATFORM
 
 # STAGE 1 -- Build module dependencies and run tests
 # The 'poetry' and 'coverage' modules are installed and verson-controlled in the
 # quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase image to limit drift
 FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase:0.4.2 as build
-ARG package
-RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/archive/minio-20230629051228.0.0.x86_64.rpm
+
+ARG package MINIO_VERSION TARGETPLATFORM
+
+RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; \
+    then export ARCH=amd64; export TAG=x86_64; \
+    elif [ "$TARGETPLATFORM" = "linux/arm64" ]; \
+    then export ARCH=arm64; export TAG=aarch64; \
+    fi; \
+    dnf -y install https://dl.min.io/server/minio/release/linux-${ARCH}/archive/${MINIO_VERSION}.${TAG}.rpm
 
 COPY poetry.lock /app/
 COPY pyproject.toml /app/
@@ -27,8 +36,15 @@ RUN python -m coverage run tests/test_${package}.py \
 
 # STAGE 2 -- Build final plugin image
 FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-osbase:0.4.2
-ARG package
-RUN dnf -y install https://dl.min.io/server/minio/release/linux-amd64/archive/minio-20230629051228.0.0.x86_64.rpm
+
+ARG package MINIO_VERSION TARGETPLATFORM
+
+RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; \
+    then export ARCH=amd64; export TAG=x86_64; \
+    elif [ "$TARGETPLATFORM" = "linux/arm64" ]; \
+    then export ARCH=arm64; export TAG=aarch64; \
+    fi; \
+    dnf -y install https://dl.min.io/server/minio/release/linux-${ARCH}/archive/${MINIO_VERSION}.${TAG}.rpm
 
 COPY --from=build /app/requirements.txt /app/
 COPY --from=build /htmlcov /htmlcov/

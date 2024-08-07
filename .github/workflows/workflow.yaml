@@ -12,14 +12,12 @@ jobs:
     with:
       image_name: ${{ github.event.repository.name }}
       image_tag: 'latest'
-      # the minio plugin is currently not ready for other cpu architectures
-      build_platforms: linux/amd64
+      multi_arch: true
     secrets:
       QUAY_NAMESPACE: ${{ secrets.QUAY_NAMESPACE }}
       QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
       QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
       
-
   docsgen:
     needs: act
     uses: arcalot/arcaflow-docsgen/.github/workflows/reusable_workflow.yaml@main
